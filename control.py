@@ -1,6 +1,7 @@
 from IO import IO
 from monitor import Monitor
 from algoritmos import AlgoritmoIngenuo
+from algoritmos import AlgoritmoVoraz
 import sys
 
 class Control:
@@ -40,7 +41,8 @@ class Control:
             ingenuo = AlgoritmoIngenuo()
             resultado = ingenuo.resolver(self.monitores)
         if(arg==1):
-            pass
+            voraz = AlgoritmoVoraz()
+            resultado = voraz.resolver(self.monitores)
         if(arg==2):
             pass
         self.resultado = resultado
@@ -52,7 +54,7 @@ class Control:
             if(self.algoritmo=="ingenuo"):
                 self.resolver(0)
             if(self.algoritmo=="voraz"):
-                pass
+                self.resolver(1)
             if(self.algoritmo)=="dinamico":
                 pass
             if(len(self.resultado)!=0):
@@ -61,7 +63,7 @@ class Control:
 def main():
 	control = Control(str(sys.argv[1]), str(sys.argv[2]))
 	control.run()
-	print("Reporte generado exitosamente :D")
+	print(":D")
 
 if __name__ == '__main__':
     main()
