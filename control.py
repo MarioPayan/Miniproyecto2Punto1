@@ -2,6 +2,7 @@ from IO import IO
 from monitor import Monitor
 from algoritmos import AlgoritmoIngenuo
 from algoritmos import AlgoritmoVoraz
+from algoritmos import AlgoritmoDinamico
 import sys
 
 class Control:
@@ -44,7 +45,8 @@ class Control:
             voraz = AlgoritmoVoraz()
             resultado = voraz.resolver(self.monitores)
         if(arg==2):
-            pass
+            dinamico = AlgoritmoDinamico()
+            resultado = dinamico.resolver(self.monitores)
         self.resultado = resultado
 
     def run(self):
@@ -56,7 +58,7 @@ class Control:
             if(self.algoritmo=="voraz"):
                 self.resolver(1)
             if(self.algoritmo)=="dinamico":
-                pass
+                self.resolver(2)
             if(len(self.resultado)!=0):
                 self.escribir()
 
